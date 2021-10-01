@@ -1,0 +1,35 @@
+<html>
+    <body>
+        <h1>Home Page</h1>
+        <b>{{cname}}</b>
+        <hr>
+        {{friends}}
+        <hr>
+
+        <ul>
+            {% for name in friends %}
+                    <li>{{name}}</li>
+            {% endfor %}
+        </ul>
+        <hr>
+
+        <table border='2' align='center' 
+        cellspacing='5' cellpadding='20'>
+                <tr>
+                    <th>Roll Number</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Marks</th>
+                </tr>     
+
+                {% for stud in students %}
+                    <tr>
+                        <td>{{stud.roll}}</td>
+                        <td>{{stud.name}}</td>
+                        <td>{{stud.age}}</td>
+                        <td>{{stud.marks}}</td>
+                    </tr>
+                {% endfor %}
+        </table>
+    </body>
+</html>

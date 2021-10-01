@@ -1,0 +1,38 @@
+<html>
+    <head>
+
+        <script>
+        
+        function add()
+        {
+            var t1 = document.getElementById('t1');
+            var t2 = document.getElementById('t2');
+            var res = document.getElementById('res');
+            res.innerHTML = 0;
+            // parseInt() , parseFloat()    
+            var x = parseFloat(t1.value);
+            var y = parseFloat(t2.value);
+
+            if(isNaN(x) || isNaN(y))
+            {
+                alert("Please Suplly Numeric Value !");
+                return;
+            }
+
+            var z = x + y;
+            res.innerHTML = z;
+        }
+        
+        </script>
+
+    </head>
+    <body>
+        <h1>Calculation Demo</h1>
+        <input type='number' id="t1" placeholder="First Number">
+        <input type='' id="t2" placeholder="Second Number">
+        <br><br>
+        <b>Result : <span id="res">0</span></b>
+        <br><br>
+        <button onclick="add()">Addition</button>
+    </body>
+</html>

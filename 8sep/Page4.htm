@@ -1,0 +1,57 @@
+<html>
+    <head>
+
+        <script>
+          
+            function init()
+            {
+                t1 = document.getElementById('t1');
+                t2 = document.getElementById('t2');
+                res = document.getElementById('res');
+            }
+
+            function change(operation)
+            {  
+                res.innerHTML = 0;
+                // parseInt() , parseFloat()    
+                var x = parseFloat(t1.value);
+                var y = parseFloat(t2.value);
+
+                if(isNaN(x) || isNaN(y))
+                {
+                    alert("Please Suplly Numeric Value !");
+                    return;
+                }
+            
+                var z = 0;
+                switch(operation)
+                {
+                case 1 : z = x + y; break;
+                case 2 : z = x - y; break;
+                case 3 : z = x * y; break;
+                case 4 : z = x / y; break;
+                case 5 : z = x % y; break;
+                }
+                res.innerHTML = z;
+            }
+
+      
+        </script>
+
+    </head>
+    <body onload="init()">
+        <h1>Calculation Demo</h1>
+        <input type='number' id="t1" placeholder="First Number">
+        <input type='' id="t2" placeholder="Second Number">
+        <br><br>
+        <input type="radio" onchange="change(1)" name='op'>Addition
+        <input type="radio" onchange="change(2)"name='op'>Subtraction
+        <input type="radio" onchange="change(3)" name='op'>Multiply
+        <input type="radio" onchange="change(4)"name='op'>Divide
+        <input type="radio" onchange="change(5)"name='op'>Modulus
+        <br><br>
+        <b>Result : <span id="res">0</span></b>
+        
+    </body>
+
+</html>
